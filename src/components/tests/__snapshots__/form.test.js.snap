@@ -1,3 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm should render 1`] = `ShallowWrapper {}`;
+exports[`LoginForm should render 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(FormHelperText))
+    error={false}
+    id="form-error-text"
+  />
+  <form
+    className="login-form"
+  >
+    <InputComponent
+      id="username"
+      inputErrorDetails={
+        Object {
+          "error": true,
+          "message": "",
+          "value": "",
+        }
+      }
+      label="Username"
+      name="username"
+      onChange={[Function]}
+      placeholder="Username"
+      value=""
+    />
+    <InputComponent
+      id="password"
+      inputErrorDetails={
+        Object {
+          "error": true,
+          "message": "",
+          "value": "",
+        }
+      }
+      label="Password"
+      name="password"
+      onChange={[Function]}
+      placeholder="Password"
+      value=""
+    />
+    <WithStyles(ForwardRef(Button))
+      color="primary"
+      disabled={true}
+      onClick={[Function]}
+      variant="contained"
+    >
+      Login
+    </WithStyles(ForwardRef(Button))>
+  </form>
+</Fragment>
+`;

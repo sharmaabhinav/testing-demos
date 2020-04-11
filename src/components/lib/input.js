@@ -1,12 +1,17 @@
 import React from 'react'
-import {Input} from '@material-ui/core';
+import {FormControl, OutlinedInput, InputLabel, FormHelperText} from '@material-ui/core';
 
 const InputComponent = (props) => {
-    const onChange = (event) => {
+    const {label, onChange, inputErrorDetails, ...inputProps} = props
+    const onInputChange = (event) => {
         props.onChange(event.target.value)
     }
     return (
-        <Input {...props} onChange={onChange} />
+        <FormControl variant="outlined" error={inputErrorDetails.error}>
+            <InputLabel htmlFor={props.id}>{props.label}</InputLabel>
+            <OutlinedInput {...inputProps} onChange={onInputChange} /> 
+            <FormHelperText id={`${props.id}-error-text`}>{inputErrorDetails.message}</FormHelperText>   
+        </FormControl>
     );
 }
 

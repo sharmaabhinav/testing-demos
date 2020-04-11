@@ -3,10 +3,16 @@
   justify-content: center;
   height: 100vh;
   align-items: center;
+  flex-direction: column;
 }
 
 .login-form {
   width: 600px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+
+  & > button {
+    width: 150px;
+  }
 }
