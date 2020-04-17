@@ -27,7 +27,7 @@ describe("LoginForm", () => {
         expect(password.value).toEqual(expeectedPassword)
     })
 
-    it("should have login button disabled", () => {
+    it("should have login button disabled initially", () => {
 
         // act
         const {getByText} = loginForm
@@ -88,7 +88,7 @@ describe("LoginForm", () => {
         expect(errorMessage).not.toBeNull()
     })
 
-    it("should show not error message on login if password is  valid", () => {
+    it("should not show error message on login if password is valid", () => {
         // arrange
 
         // act

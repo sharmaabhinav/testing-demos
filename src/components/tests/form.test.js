@@ -32,7 +32,7 @@ describe('LoginForm', () => {
         expect(state).toEqual(expectedInitialState)
     })
 
-    it("should have disabled login button initially", () => {
+    it("should have login button disabled initially", () => {
         // arrange
         const isDisabled = true
 
@@ -43,7 +43,7 @@ describe('LoginForm', () => {
         expect(loginBtn.props().disabled).toEqual(isDisabled)
     })
 
-    it("should have updated username in state when username is changed", () => {
+    it("should update username in state when username is changed", () => {
         // arrange
         const username = {value: 'user', error: false, message: ''}
 
@@ -67,7 +67,7 @@ describe('LoginForm', () => {
         expect(wrapper.state().password).toEqual(password)
     })
 
-    it("should have enabled login button after filling username and password", () => {
+    it("should enable login button after filling username and password", () => {
         // arrange
         const isDisabled = false
 
@@ -99,5 +99,22 @@ describe('LoginForm', () => {
         // assert
         expect(wrapper.state().error).toEqual(true)
         expect(wrapper.state().errorMessage).toEqual("The password should be at least 6 characters long")
+    })
+
+    it("should not show error on login if password is valid", () => {
+
+        // act
+        const UsernameInput = wrapper.find(InputComponent).at(0)
+        const PasswordInput = wrapper.find(InputComponent).at(1)
+
+        UsernameInput.props().onChange('user')
+        PasswordInput.props().onChange('password')
+
+        const loginBtn = wrapper.find(Button)
+        loginBtn.props().onClick()
+
+        // assert
+        expect(wrapper.state().error).toEqual(false)
+        expect(wrapper.state().errorMessage).toEqual("")
     })
 })
