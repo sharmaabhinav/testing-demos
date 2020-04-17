@@ -18,8 +18,8 @@ describe('LoginForm', () => {
     it("should render with correct initial state", () => {
         // arrange
         const expectedInitialState = {
-           username: {value: '', error: true, message: ''},
-            password: {value: '', error: true, message: ''},
+           username: {value: '', error: true, message: 'Username is empty'},
+            password: {value: '', error: true, message: 'Password is empty'},
             error: false,
             errorMessage: '',
             isLoginEnabled: false

@@ -41,13 +41,13 @@ describe("LoginForm", () => {
         // arrange
 
         // act
-        const { getByLabelText, getByText} = loginForm
+        const { getByLabelText, queryByText} = loginForm
         const userName = getByLabelText(/username/i)
 
         fireEvent.change(userName, {target: {value: 'username'} })
         fireEvent.change(userName, {target: {value: ''} })
 
-        let errorMessage = getByText(/username is empty/i)
+        let errorMessage = queryByText(/username is empty/i)
 
         // assert
         expect(errorMessage).not.toBeNull()
@@ -57,13 +57,13 @@ describe("LoginForm", () => {
         // arrange
 
         // act
-        const { getByLabelText, getByText} = loginForm
+        const { getByLabelText, queryByText} = loginForm
         const password = getByLabelText(/password/i)
 
         fireEvent.change(password, {target: {value: 'password'} })
         fireEvent.change(password, {target: {value: ''} })
 
-        let errorMessage = getByText(/password is empty/i)
+        let errorMessage = queryByText(/password is empty/i)
 
         // assert
         expect(errorMessage).not.toBeNull()

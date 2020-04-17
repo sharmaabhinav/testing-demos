@@ -14,7 +14,7 @@ exports[`LoginForm should render 1`] = `
       inputErrorDetails={
         Object {
           "error": true,
-          "message": "",
+          "message": "Username is empty",
           "value": "",
         }
       }
@@ -29,7 +29,7 @@ exports[`LoginForm should render 1`] = `
       inputErrorDetails={
         Object {
           "error": true,
-          "message": "",
+          "message": "Password is empty",
           "value": "",
         }
       }
